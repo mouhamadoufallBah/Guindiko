@@ -11,13 +11,6 @@ import { FaqComponent } from './components/mentores/faq/faq.component';
 import { MentionLegalComponent } from './components/mentores/mention-legal/mention-legal.component';
 import { ConfidentialiteComponent } from './components/mentores/confidentialite/confidentialite.component';
 import { ConditionUtilisationComponent } from './components/mentores/condition-utilisation/condition-utilisation.component';
-import { AcceuilMentorComponent } from './components/mentor/acceuil-mentor/acceuil-mentor.component';
-import { GestionDesMentorComponent } from './components/admin/gestion-des-mentor/gestion-des-mentor.component';
-import { GestionDesSessionsComponent } from './components/mentor/gestion-des-sessions/gestion-des-sessions.component';
-import { GestionDesMentoresComponent } from './components/mentor/gestion-des-mentores/gestion-des-mentores.component';
-import { AcceuilAdminComponent } from './components/admin/acceuil-admin/acceuil-admin.component';
-import { GestionDesEvenementsComponent } from './components/admin/gestion-des-evenements/gestion-des-evenements.component';
-import { GestionDesMetiersComponent } from './components/admin/gestion-des-metiers/gestion-des-metiers.component';
 import { PageErrorComponent } from './components/layouts/page-error/page-error.component';
 
 const routes: Routes = [
@@ -35,7 +28,6 @@ const routes: Routes = [
   { path: 'conditionUtilisation', component: ConditionUtilisationComponent },
   { path: 'erreur404', component: PageErrorComponent },
   { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
-  { path: '**', redirectTo: 'erreur404', pathMatch: 'full' },
 
   //admin
   {
