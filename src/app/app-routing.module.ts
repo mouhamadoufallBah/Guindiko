@@ -18,6 +18,7 @@ import { GestionDesMentoresComponent } from './components/mentor/gestion-des-men
 import { AcceuilAdminComponent } from './components/admin/acceuil-admin/acceuil-admin.component';
 import { GestionDesEvenementsComponent } from './components/admin/gestion-des-evenements/gestion-des-evenements.component';
 import { GestionDesMetiersComponent } from './components/admin/gestion-des-metiers/gestion-des-metiers.component';
+import { PageErrorComponent } from './components/layouts/page-error/page-error.component';
 
 const routes: Routes = [
   //utilisateur simple
@@ -32,7 +33,9 @@ const routes: Routes = [
   { path: 'mentioLegal', component: MentionLegalComponent },
   { path: 'confidentialite', component: ConfidentialiteComponent },
   { path: 'conditionUtilisation', component: ConditionUtilisationComponent },
+  { path: 'erreur404', component: PageErrorComponent },
   { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
+  { path: '**', redirectTo: 'erreur404', pathMatch: 'full' },
 
   //admin
   {
