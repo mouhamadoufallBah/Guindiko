@@ -35,18 +35,16 @@ const routes: Routes = [
   { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
 
   //admin
-  { path: 'Dashboard-Admin', component: AcceuilAdminComponent },
-  { path: 'Dashboard-Admin-evenement', component: GestionDesEvenementsComponent },
-  { path: 'Dashboard-Admin-mentor', component: GestionDesMentorComponent },
-  { path: 'Dashboard-Admin-mentores', component: GestionDesMentoresComponent },
-  { path: 'Dashboard-Admin-metiers', component: GestionDesMetiersComponent },
-
+  {
+    path: 'dashboard-admin',
+    loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule)
+  },
 
   //mentor
-  { path: 'Dashboard-Mentor-Accueil', component: AcceuilMentorComponent },
-  { path: 'Dashboard-Mentor-mentores', component: GestionDesMentoresComponent },
-  { path: 'Dashboard-Mentor-sessions', component: GestionDesSessionsComponent},
-
+  {
+    path: 'dashboard-mentor',
+    loadChildren: () => import('./components/mentor/mentor.module').then(m => m.MentorModule)
+  },
 ];
 
 @NgModule({
