@@ -1,14 +1,14 @@
 .mainContent {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 15% 85%;
+  grid-template-columns: 20% 80%;
 }
 
 .mainContentLeft {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .mainContentRight {
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }

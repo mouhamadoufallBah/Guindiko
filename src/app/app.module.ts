@@ -32,6 +32,7 @@ import { MentorService } from './services/mentor/mentor.service';
 import { MentoresService } from './services/mentores/mentores.service';
 import { MessageService } from './services/message/message.service';
 import { SessionService } from './services/session/session.service';
+import { PageErrorComponent } from './components/layouts/page-error/page-error.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { SessionService } from './services/session/session.service';
     SessionMentoresComponent,
     HeaderComponent,
     FooterComponent,
+    PageErrorComponent,
 
   ],
   imports: [
