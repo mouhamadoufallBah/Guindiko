@@ -57,13 +57,15 @@ import { SessionService } from './services/session/session.service';
     ConditionUtilisationComponent,
     SessionMentoresComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
+  
   providers: [
     MetierService,
     EvenementService,
