@@ -5,10 +5,9 @@
   grid-template-columns: 20% 80%;
 }
 
-.mainContentLeft {
-  /* border: 1px solid red; */
+.mainContentRight {
+  display: grid;
+  grid-template-rows: 10% 88%;
+  gap: 2%;
 }
 
-.mainContentRight {
-  /* border: 1px solid green; */
-}
