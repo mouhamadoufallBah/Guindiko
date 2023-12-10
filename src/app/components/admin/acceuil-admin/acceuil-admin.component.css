@@ -53,15 +53,6 @@
   gap: 4%;
 }
 
-.modalContent .modalContentTop .modalContentTopImage{
-  /* border: 1px solid; */
-}
-
-.modalContent .modalContentTop .modalContentTopDescription p{
-  
-}
-
-
 .modalContentBottom{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
