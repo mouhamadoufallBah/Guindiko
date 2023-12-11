@@ -41,7 +41,15 @@
                 <h4 class="card-title" style="color: white;">Lundi le 17/9/2024</h4>
                 <p class="card-text" style="color: white;">En ligne</p>
                 <p class="card-text" style="color: white;">Avec Mr malick Fall</p>
-                <div><button class="btn-content-detail" >voir plus</button></div>
+                <!-- <div><button class="btn-content-detail" >voir plus</button></div> -->
+                <button
+            type="button"
+            class="btn text-white"
+            data-bs-toggle="modal"
+            data-bs-target="#detailMentor"
+            style="background-color: var(--color-primary); border: 1px solid white;">
+          voir plus
+          </button>
               </div>
             </div>
           </div>
@@ -57,7 +65,15 @@
                 <h4 class="card-title" style="color: white;">Lundi le 17/9/2024</h4>
                 <p class="card-text" style="color: white;">En ligne</p>
                 <p class="card-text" style="color: white;">Avec Mr malick Fall</p>
-                <div><button class="btn-content-detail" >voir plus</button></div>
+                <!-- <div><button class="btn-content-detail" >voir plus</button></div> -->
+                <button
+                type="button"
+                class="btn text-white"
+                data-bs-toggle="modal"
+                data-bs-target="#detailMentor"
+                style="background-color: var(--color-primary); border: 1px solid white;">
+              voir plus
+              </button>
               </div>
             </div>
           </div>
@@ -68,7 +84,7 @@
       <!-- le buttons -->
       <div class="mainContentBottomLeftBottom mt-4">
         <button
-          routerLink="/dashboard-admin/dashboard-admin-evenement"
+          routerLink="/dashboard-mentor/gestion-session"
           class="btn w-100"
           style="color: white; background-color: var(--color-primary)"
         >
@@ -110,7 +126,7 @@
       </table>
       <div class="mainContentBottomRightBottom">
         <button
-          routerLink="/dashboard-admin/dashboard-admin-mentores"
+          routerLink="/dashboard-mentor/gestion-mentore"
           class="btn w-100"
           style="color: white; background-color: var(--color-primary)"
         >
@@ -205,3 +221,72 @@
     </div>
   </div>
 </div>
+<!-- modale detail session -->
+<div
+    class="modal fade modal-lg"
+    id="detailMentor"
+    tabindex="-1"
+    aria-labelledby="detailMentorLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1
+            class="modal-title fs-4 fw-semibold text-center w-100"
+            id="detailMentorLabel"
+          >
+            Detail session
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body modalContent" style="margin-left: 220px;">
+          <div class="modalContentTop">
+            <div class="modalContentTopItems">
+              <div class="d-flex justify-content-between ">
+                <div class="modalContentBottomItem">
+                    <span class="fs-5 fw-bold" style="color: var(--color-primary)">Theme</span>
+                    <p>Gestion projet</p>
+                  </div>
+                  <div class="modalContentBottomItem">
+                    <span class="fs-5 fw-bold" style="color: var(--color-primary)">Mentoré</span>
+                    <p>Fall Bah</p>
+                  </div>
+
+              </div>
+             <div class="d-flex  justify-content-between ">
+                <div class="modalContentBottomItem">
+                    <span class="fs-5 fw-bold" style="color: var(--color-primary)"
+                      >Lieu</span
+                    >
+                    <p>Pikine</p>
+                  </div>
+                  <div class="modalContentBottomItem">
+                    <span class="fs-5 fw-bold" style="color: var(--color-primary)"
+                      >Date</span
+                    >
+                    <p> 17/11/2024</p>
+                  </div>
+
+             </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button
+            type="button"
+            class="btn text-white w-25"
+            data-bs-dismiss="modal"
+            style="background-color: var(--color-primary)"
+          >
+            Fermer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
