@@ -17,6 +17,8 @@ export class AuthentificationComponent implements OnInit {
   email = "";
   password = "";
 
+  switchFormValue = true;
+
   userConnected: any;
 
 
@@ -34,7 +36,7 @@ export class AuthentificationComponent implements OnInit {
       this.authService.login(this.email, this.password).pipe(
         tap(() => {
           let userCon = JSON.parse(localStorage.getItem('userConnected') || '');
-          
+
           this.loading = false;
 
           if (userCon.role == "admin") {
@@ -57,6 +59,10 @@ export class AuthentificationComponent implements OnInit {
 
   logout() {
     this.authService.logout()
+  }
+
+  switchForm() {
+    this.switchFormValue = !this.switchFormValue;
   }
 }
 
