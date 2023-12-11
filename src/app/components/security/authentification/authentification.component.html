@@ -80,7 +80,7 @@
             <h1 class="text-center fw-bold mb-5">S'inscrire</h1>
             <form action="">
               <div class="col-12 d-flex justify-content-between">
-                <div class="mb-3 col-6 ">
+                <div class="mb-3 col-6">
                   <label for="nomInput" class="form-label">Nom:</label>
                   <input
                     type="text"
@@ -103,7 +103,7 @@
               </div>
 
               <div class="col-12 d-flex justify-content-between">
-                <div class="mb-3 col-6 ">
+                <div class="mb-3 col-6">
                   <label for="telephoneInput" class="form-label"
                     >Telephone:</label
                   >
@@ -133,7 +133,7 @@
               </div>
 
               <div class="col-12 d-flex justify-content-between">
-                <div class="mb-3 col-6 ">
+                <div class="mb-3 col-6">
                   <label for="emailInput" class="form-label"
                     >Adresse email:</label
                   >
@@ -162,15 +162,13 @@
               <div class="">
                 <div class="mb-3 col-12 p-1">
                   <label for="parcourInput" class="form-label">Parcours:</label>
-                  <div class="form-floating">
-                    <textarea
-                      class="form-control"
-                      name="parcourInput"
-                      placeholder="veuillez nous parler un peu de vous"
-                      id="parcourInput"
-                      [(ngModel)]="parcourInputRegister"
-                    ></textarea>
-                  </div>
+                  <textarea
+                    class="form-control"
+                    name="parcourInput"
+                    placeholder="veuillez nous parler un peu de vous"
+                    id="parcourInput"
+                    [(ngModel)]="parcourInputRegister"
+                  ></textarea>
                 </div>
               </div>
               <div class="btn-auth text-center">
