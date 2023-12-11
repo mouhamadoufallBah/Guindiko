@@ -1,11 +1,12 @@
-export class Eve {
-  id!: string;
+export class Evenement {
+  id!: number;
   libelle!: string;
   description!: string;
-  debouche!: string;
+  lieu!: string;
   image!: string;
   est_archive!: boolean;
-  date_publication!: string;
+  date_evenement!: string;
+  heure_evenement!: string;
   createdAt!: string;
   updatedAt!: string;
 }

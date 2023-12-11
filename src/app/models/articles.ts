@@ -1,5 +1,5 @@
 export class Article {
-  id!: string;
+  id!: number;
   libelle!: string;
   description!: string;
   debouche!: string;
