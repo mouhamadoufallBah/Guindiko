@@ -37,71 +37,54 @@ export class AuthentificationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register() {
+  register(){
     const newMentor = new User;
 
-    newMentor.nom = this.nomRegister + ' ' + this.prenomRegister;
+    newMentor.nom = this.nomRegister + this.prenomRegister;
     newMentor.email = this.emailRegister;
     newMentor.password = this.passwordRegister;
     newMentor.parcours = this.parcourInputRegister;
     newMentor.statut = this.statutRegister;
-    newMentor.telephone = this.telephoneRegister;
+    newMentor.telephone =this.telephoneRegister;
 
 
     if (this.emailRegister == "" || this.passwordRegister == "" || this.parcourInputRegister == "" || this.statutRegister == "" || this.telephoneRegister == "") {
       this.messageService.showMessage("error", "Veuillez remplir tout les champs");
-    } else {
-      this.authService.register(newMentor, (reponse: any) => {
-        if (reponse.status_code == 200) {
-          this.messageService.showMessage("success", "inscription faite avec succès");
+    }else{
+      this.authService.register(newMentor).subscribe(
+        (data => {
 
-          //revenir à la page de connexion
-          this.switchForm();
-
-          //vider les champs
-          this.nomRegister = "";
-          this.prenomRegister = "";
-          this.emailRegister = "";
-          this.passwordRegister = "";
-          this.statutRegister = "";
-          this.telephoneRegister = "";
-          this.parcourInputRegister = "";
-        } else {
-          this.messageService.showMessage("error", "veuillez vérifiez ce que vous avez saisie");
-        }
-      });
+        })
+      );
     }
-
   }
 
   login() {
-    // verifier que les champs ne sont pas vide
+    this.loading = true;
     if (this.emailLogin == "" || this.passwordLogin == "") {
-      this.messageService.showMessage("error", "Veuillez renseigner tous les champs");
+      this.messageService.showMessage("error", "Veuillez remplir tout les champs");
     } else {
-      //consommer notre service
-      this.authService.login({ email: this.emailLogin, password: this.passwordLogin }, (reponse: any) => {
-        
-        if (reponse.status_code == 200) {
-          this.messageService.showMessage("success", "Connexion faite avec succès");
+      this.authService.login(this.emailLogin, this.passwordLogin).pipe(
+        tap(() => {
+          let userCon = JSON.parse(localStorage.getItem('userConnected') || '');
 
-          //stocker notre les info de la requete dans notre localstorage
-          localStorage.setItem("userOnline", JSON.stringify(reponse));
+          this.loading = false;
 
-          //recuperer le le userConnecter
-          const userOnline = JSON.parse(localStorage.getItem('userOnline') || '');
-
-          if (userOnline.status_body.role === "admin") {
+          if (userCon.role == "admin") {
             this.route.navigate(['/dashboard-admin']);
-          } else if (userOnline.status_body.role === "mentor") {
+          }else if (userCon.role === "mentor") {
             this.route.navigate(['/dashboard-mentor']);
-          } else {
+          }else {
             this.route.navigate(['/acceuil']);
           }
-        } else {
-          this.messageService.showMessage("error", "Login ou pass incorrect");
-        }
-      });
+        }),
+        catchError(error => {
+          this.loading = false;
+          this.errorMsg = error.message;
+          return EMPTY;
+        })
+      ).subscribe();
+
     }
   }
 
