@@ -53,11 +53,10 @@ export class AuthentificationComponent implements OnInit {
     }else{
       this.authService.register(newMentor).subscribe(
         (data => {
+
         })
       );
     }
-
-
   }
 
   login() {
