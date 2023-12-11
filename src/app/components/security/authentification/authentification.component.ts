@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, EMPTY, Observable, tap } from 'rxjs';
+import { User } from 'src/app/models/users';
 import { MessageService } from 'src/app/services/message/message.service';
 import { AuthService } from 'src/app/services/securityService/auth.service';
 
@@ -14,8 +15,16 @@ export class AuthentificationComponent implements OnInit {
   loading!: boolean;
   errorMsg!: string;
 
-  email = "";
-  password = "";
+  emailLogin = "";
+  passwordLogin = "";
+
+  nomRegister = "";
+  prenomRegister = "";
+  emailRegister = "";
+  passwordRegister = "";
+  statutRegister = "";
+  telephoneRegister = "";
+  parcourInputRegister = "";
 
   switchFormValue = true;
 
@@ -28,12 +37,36 @@ export class AuthentificationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  register(){
+    const newMentor = new User;
+
+    newMentor.nom = this.nomRegister + this.prenomRegister;
+    newMentor.email = this.emailRegister;
+    newMentor.password = this.passwordRegister;
+    newMentor.parcours = this.parcourInputRegister;
+    newMentor.statut = this.statutRegister;
+    newMentor.telephone =this.telephoneRegister;
+
+
+    if (this.emailRegister == "" || this.passwordRegister == "" || this.parcourInputRegister == "" || this.statutRegister == "" || this.telephoneRegister == "") {
+      this.messageService.showMessage("error", "Veuillez remplir tout les champs");
+    }else{
+      this.authService.register(newMentor).subscribe(
+        (data => {
+          
+        })
+      );
+    }
+
+
+  }
+
   login() {
     this.loading = true;
-    if (this.email == "" || this.password == "") {
+    if (this.emailLogin == "" || this.passwordLogin == "") {
       this.messageService.showMessage("error", "Veuillez remplir tout les champs");
     } else {
-      this.authService.login(this.email, this.password).pipe(
+      this.authService.login(this.emailLogin, this.passwordLogin).pipe(
         tap(() => {
           let userCon = JSON.parse(localStorage.getItem('userConnected') || '');
 
