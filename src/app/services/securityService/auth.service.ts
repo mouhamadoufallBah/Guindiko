@@ -34,20 +34,6 @@ export class AuthService {
     return this.userObj
   }
 
-
-  // login(email: string, password: string) {
-  //   return this.http.post<{ status_body: string, token: string }>('http://localhost:8000/api/login', { email: email, password: password }).subscribe(
-  //     (data) => {
-  //       // console.log(data);
-  //       console.log(data);
-  //     },
-  //     (error) => {
-  //       console.error('Erreur lors de la récupération du produit', error);
-  //     }
-  //   )
-
-  // }
-
   getAllUser() {
     return this.http.get<User[]>(`http://localhost:8000/user/index`);
   }
@@ -66,6 +52,10 @@ export class AuthService {
 
       })
     );
+  }
+
+  register(mentore: User):Observable<User>{
+    return this.http.post<User>('http://localhost:8000/api/register', mentore);
   }
 
   logout() {
