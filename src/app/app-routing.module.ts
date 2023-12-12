@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
 
   //admin
-  {
+  { 
     path: 'dashboard-admin',
     loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule)
   },
