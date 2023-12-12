@@ -8,7 +8,7 @@ export class Mentor {
   photo_profil!: string;
   nombre_annee_experience!: number;
   nombre_mentores!: number;
-  article_id!: number;
+  articles_id!: number;
   est_archive!: boolean;
   createdAt!: string;
   updatedAt!: string;

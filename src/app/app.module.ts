@@ -34,7 +34,9 @@ import { MessageService } from './services/message/message.service';
 import { SessionService } from './services/session/session.service';
 import { PageErrorComponent } from './components/layouts/page-error/page-error.component';
 import { AuthService } from './services/securityService/auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ArticlesIdToArticleNamePipe } from './pipes/articles-id-to-article-name.pipe';
+import { AuthInterceptor } from './interceptors/inerceptor';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     PageErrorComponent,
+    ArticlesIdToArticleNamePipe,
 
   ],
   imports: [
@@ -78,7 +81,12 @@ import { HttpClientModule } from '@angular/common/http';
     MentoresService,
     MessageService,
     SessionService,
-    AuthService
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })

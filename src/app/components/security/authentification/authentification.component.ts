@@ -66,6 +66,9 @@ export class AuthentificationComponent implements OnInit {
           this.statutRegister = "";
           this.telephoneRegister = "";
           this.parcourInputRegister = "";
+
+         
+
         } else {
           this.messageService.showMessage("error", "veuillez vérifiez ce que vous avez saisie");
         }
@@ -81,7 +84,7 @@ export class AuthentificationComponent implements OnInit {
     } else {
       //consommer notre service
       this.authService.login({ email: this.emailLogin, password: this.passwordLogin }, (reponse: any) => {
-        
+
         if (reponse.status_code == 200) {
           this.messageService.showMessage("success", "Connexion faite avec succès");
 

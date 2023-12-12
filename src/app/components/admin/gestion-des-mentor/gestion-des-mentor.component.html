@@ -100,7 +100,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let mentor of AllmentorData.Mentor">
             <th class="text-center">
               <img
                 src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -108,195 +108,16 @@
                 style="height: 40px; width: 40px; border-radius: 50%"
               />
             </th>
-            <td class="text-center">Mark</td>
-            <td class="text-center">otto@gmail.com</td>
-            <td class="text-center">Ingenieur logiciel</td>
+            <td class="text-center">{{ mentor.nom }}</td>
+            <td class="text-center">{{ mentor.email }}</td>
+            <td class="text-center"> {{ mentor.articles_id | articlesIdToArticleName: articles}}</td>
             <td class="text-center">
               <button
                 class="btn me-2 text-white"
                 style="background-color: var(--color-primary)"
                 data-bs-toggle="modal"
                 data-bs-target="#detailMentor"
-              >
-                <i class="bx bxs-show"></i>
-              </button>
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#modifierMentor"
-              >
-                <i class="bx bxs-edit"></i>
-              </button>
-              <button
-                class="btn text-white"
-                style="background-color: var(--color-primary)"
-              >
-                <i class="bx bxs-archive-in"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th class="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                style="height: 40px; width: 40px; border-radius: 50%"
-              />
-            </th>
-            <td class="text-center">Mark</td>
-            <td class="text-center">otto@gmail.com</td>
-            <td class="text-center">Ingenieur logiciel</td>
-            <td class="text-center">
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#detailMentor"
-              >
-                <i class="bx bxs-show"></i>
-              </button>
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#modifierMentor"
-              >
-                <i class="bx bxs-edit"></i>
-              </button>
-              <button
-                class="btn text-white"
-                style="background-color: var(--color-primary)"
-              >
-                <i class="bx bxs-archive-in"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th class="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                style="height: 40px; width: 40px; border-radius: 50%"
-              />
-            </th>
-            <td class="text-center">Mark</td>
-            <td class="text-center">otto@gmail.com</td>
-            <td class="text-center">Ingenieur logiciel</td>
-            <td class="text-center">
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#detailMentor"
-              >
-                <i class="bx bxs-show"></i>
-              </button>
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#modifierMentor"
-              >
-                <i class="bx bxs-edit"></i>
-              </button>
-              <button
-                class="btn text-white"
-                style="background-color: var(--color-primary)"
-              >
-                <i class="bx bxs-archive-in"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th class="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                style="height: 40px; width: 40px; border-radius: 50%"
-              />
-            </th>
-            <td class="text-center">Mark</td>
-            <td class="text-center">otto@gmail.com</td>
-            <td class="text-center">Ingenieur logiciel</td>
-            <td class="text-center">
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#detailMentor"
-              >
-                <i class="bx bxs-show"></i>
-              </button>
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#modifierMentor"
-              >
-                <i class="bx bxs-edit"></i>
-              </button>
-              <button
-                class="btn text-white"
-                style="background-color: var(--color-primary)"
-              >
-                <i class="bx bxs-archive-in"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th class="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                style="height: 40px; width: 40px; border-radius: 50%"
-              />
-            </th>
-            <td class="text-center">Mark</td>
-            <td class="text-center">otto@gmail.com</td>
-            <td class="text-center">Ingenieur logiciel</td>
-            <td class="text-center">
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#detailMentor"
-              >
-                <i class="bx bxs-show"></i>
-              </button>
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#modifierMentor"
-              >
-                <i class="bx bxs-edit"></i>
-              </button>
-              <button
-                class="btn text-white"
-                style="background-color: var(--color-primary)"
-              >
-                <i class="bx bxs-archive-in"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th class="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                style="height: 40px; width: 40px; border-radius: 50%"
-              />
-            </th>
-            <td class="text-center">Mark</td>
-            <td class="text-center">otto@gmail.com</td>
-            <td class="text-center">Ingenieur logiciel</td>
-            <td class="text-center">
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#detailMentor"
+                (click)=" getMentorById(mentor.id)"
               >
                 <i class="bx bxs-show"></i>
               </button>
@@ -318,7 +139,7 @@
           </tr>
         </tbody>
       </table>
-      <div class="paginationSection" style="width: 92.5%">
+      <div class="paginationSection" style="width: 92.5%" *ngIf="AllmentorData.Mentor.length>6">
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-end paginationItems">
             <li class="page-item disabled text-center" style="width: 70px">
@@ -375,7 +196,13 @@
           <div class="row">
             <div class="mb-3 col-6">
               <label for="nom" class="form-label">Nom</label>
-              <input type="text" class="form-control" id="nom" name="nom" />
+              <input
+                type="text"
+                class="form-control"
+                id="nom"
+                name="nom"
+                [(ngModel)]="nomMentor"
+              />
             </div>
             <div class="mb-3 col-6">
               <label for="prenom" class="form-label">Prenom</label>
@@ -384,6 +211,7 @@
                 class="form-control"
                 id="prenom"
                 name="prenom"
+                [(ngModel)]="prenomMentor"
               />
             </div>
           </div>
@@ -395,11 +223,18 @@
                 class="form-control"
                 id="email"
                 name="email"
+                [(ngModel)]="emailMentor"
               />
             </div>
             <div class="mb-3 col-6">
-              <label for="formFile" class="form-label">Image</label>
-              <input class="form-control" type="file" id="formFile" />
+              <label for="photo_profil_Mentor" class="form-label">Image</label>
+              <input
+                class="form-control"
+                type="text"
+                id="photo_profil_Mentor"
+                name="photo_profil_Mentor"
+                [(ngModel)]="photo_profil_Mentor"
+              />
             </div>
           </div>
           <div class="row">
@@ -409,6 +244,7 @@
                 class="form-select"
                 name="specialite"
                 aria-label="Default select example"
+                [(ngModel)]="article_idMentor"
               >
                 <option selected>Selectionner son specialté</option>
                 <option value="1">One</option>
@@ -425,11 +261,34 @@
                 class="form-control"
                 id="anneeExperience"
                 name="anneeExperience"
+                [(ngModel)]="nombre_annee_experienceMentor"
               />
             </div>
           </div>
           <div class="row">
-            <textarea class="form-control" placeholder="Description" style="height: 100px"></textarea>
+            <div class="mb-3 col-6">
+              <label for="telphoneMentor" class="form-label"
+                >Telephone</label
+              >
+              <input
+                type="tel"
+                class="form-control"
+                id="telphoneMentor"
+                name="telphoneMentor" [(ngModel)]="telephoneMentor"
+              />
+            </div>
+            <div class="mb-3 col-6">
+              <label for="passwordMentor" class="form-label"
+                >Mot de passe</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="passwordMentor"
+                name="passwordMentor"
+                [(ngModel)]="passwordMentor"
+              />
+            </div>
           </div>
         </form>
       </div>
@@ -437,7 +296,9 @@
         <button
           type="button"
           class="btn text-white w-25"
+          data-bs-dismiss="modal"
           style="background-color: var(--color-primary)"
+          (click)="addUser()"
         >
           Ajouter
         </button>
@@ -498,25 +359,26 @@
               <span class="fs-5 fw-bold" style="color: var(--color-primary)"
                 >Nom complet</span
               >
-              <p>Le percepteur</p>
+              <p class="fs-5">{{ currentMentorElt.mentor[0].nom }}</p>
             </div>
             <div class="modalContentBottomItem">
               <span class="fs-5 fw-bold" style="color: var(--color-primary)"
                 >Email</span
               >
-              <p>Le percepteur</p>
+              <p class="fs-5">{{ currentMentorElt.mentor[0].email }}</p>
             </div>
             <div class="modalContentBottomItem">
               <span class="fs-5 fw-bold" style="color: var(--color-primary)"
                 >Specialité</span
               >
-              <p>Le percepteur</p>
+              <p class="fs-5">{{ currentMentorElt.mentor[0].articles_id | articlesIdToArticleName: articles }}</p>
+
             </div>
             <div class="modalContentBottomItem">
               <span class="fs-5 fw-bold" style="color: var(--color-primary)"
                 >Année d'expérience</span
               >
-              <p>Le percepteur</p>
+              <p class="fs-5">{{ currentMentorElt.mentor[0].nombre_annee_experience }}</p>
             </div>
           </div>
         </div>
@@ -547,11 +409,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1
-        class="modal-title fs-4 fw-semibold text-center w-100"
-        id="detailMentorLabel"
-      >
-        Modifier un mentor
-      </h1>
+          class="modal-title fs-4 fw-semibold text-center w-100"
+          id="detailMentorLabel"
+        >
+          Modifier un mentor
+        </h1>
         <button
           type="button"
           class="btn-close"
@@ -617,7 +479,11 @@
               />
             </div>
             <div class="row">
-              <textarea class="form-control" placeholder="Description" style="height: 100px"></textarea>
+              <textarea
+                class="form-control"
+                placeholder="Description"
+                style="height: 100px"
+              ></textarea>
             </div>
           </div>
         </form>
