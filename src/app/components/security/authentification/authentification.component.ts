@@ -67,7 +67,7 @@ export class AuthentificationComponent implements OnInit {
           this.telephoneRegister = "";
           this.parcourInputRegister = "";
 
-         
+
 
         } else {
           this.messageService.showMessage("error", "veuillez vérifiez ce que vous avez saisie");

@@ -3,6 +3,7 @@ import { Mentor } from 'src/app/models/mentors';
 import { MentorService } from 'src/app/services/mentor/mentor.service';
 import { MessageService } from 'src/app/services/message/message.service';
 import { MetierService } from 'src/app/services/metier/metier.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-gestion-des-mentor',
@@ -26,6 +27,16 @@ export class GestionDesMentorComponent {
   photo_profil_Mentor = "";
   article_idMentor =1 ;
   passwordMentor = "";
+
+  prenomMentorUpdate = ""
+  nomMentorUpdate = "";
+  emailMentorUpdate = "";
+  telephoneMentorUpdate = "";
+  nombre_annee_experienceMentorUpdate = 0;
+  photo_profil_MentorUpdate = "";
+  article_idMentorUpdate =1 ;
+  passwordMentorUpdate = "";
+
   // descriptionMentor = "";
 
 
@@ -96,15 +107,79 @@ export class GestionDesMentorComponent {
     this.mentorService.getMentorById(id).subscribe(
       (data)=>{
         this.currentMentorElt = data;
-        console.log(this.currentMentorElt.mentor[0], 'aze');
+        console.log(this.currentMentorElt, 'aze');
+
+        this.prenomMentorUpdate = this.currentMentorElt.mentor.nom;
+        this.nomMentorUpdate = "";
+        this.emailMentorUpdate = this.currentMentorElt.mentor.email;
+        this.telephoneMentorUpdate = this.currentMentorElt.mentor.telephone;
+        this.nombre_annee_experienceMentorUpdate = this.currentMentorElt.mentor.nombre_annee_experience;
+        this.photo_profil_MentorUpdate = this.currentMentorElt.mentor.photo_profil;
+        this.article_idMentorUpdate =this.currentMentorElt.mentor.articles_id ;
+        // this.passwordMentorUpdate = this.currentMentorElt.mentor.password ;
       }
     );
+    // alert(id)
   }
 
-  updateMentor(){
 
 
+  updateMentor(id: number){
+    const mentorToUpdate = new Mentor;
 
-    // this.mentorService.updateMentor()
+    mentorToUpdate.nom = this.prenomMentorUpdate + " " + this.nomMentorUpdate;
+    mentorToUpdate.email = this.emailMentorUpdate;
+    mentorToUpdate.photo_profil = this.photo_profil_MentorUpdate;
+    mentorToUpdate.password = this.passwordMentorUpdate;
+    mentorToUpdate.telephone = this.telephoneMentorUpdate;
+    mentorToUpdate.nombre_annee_experience = this.nombre_annee_experienceMentorUpdate;
+    mentorToUpdate.articles_id = this.article_idMentorUpdate;
+
+    if (this.emailMentorUpdate == "" || this.telephoneMentorUpdate == "" || this.nombre_annee_experienceMentorUpdate == null) {
+      this.messageService.showMessage("error", "Veuillez remplir tous les champs")
+    }else{
+
+      this.mentorService.updateMentor(mentorToUpdate, id).subscribe(
+        (data)=> {
+          console.log(data);
+
+        }
+      );
+    }
+
+  }
+
+  archiveMentorById(id: number) {
+    const mentor = new Mentor(); // Vous pouvez également récupérer les données du mentor si nécessaire
+
+    Swal.fire({
+      title: "Etes vous sûr?",
+      text: "de vouloir archiver",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Oui, Je confirme"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Archiver!",
+          text: "Ce mentor a été archiver avec succées ",
+          icon: "success"
+        });
+
+        this.mentorService.archiveMentor(id, mentor).subscribe(
+          (response) => {
+            this.AllmentorData;
+          },
+          (error) => {
+            console.error('Erreur lors de l\'archivage du mentor', error);
+
+          }
+        );
+      }
+    });
+
+
   }
 }

@@ -126,12 +126,14 @@
                 style="background-color: var(--color-primary)"
                 data-bs-toggle="modal"
                 data-bs-target="#modifierMentor"
+                (click)=" getMentorById(mentor.id)"
               >
                 <i class="bx bxs-edit"></i>
               </button>
               <button
                 class="btn text-white"
                 style="background-color: var(--color-primary)"
+                (click)="archiveMentorById(mentor.id)"
               >
                 <i class="bx bxs-archive-in"></i>
               </button>
@@ -172,7 +174,7 @@
   class="modal fade modal-lg"
   id="ajouteMentor"
   tabindex="-1"
-  aria-labelledby="ajouteMentorLabel"
+  aria-labelledby="modifierMentor"
   aria-hidden="true"
 >
   <div class="modal-dialog">
@@ -183,6 +185,7 @@
           id="detailMentorLabel"
         >
           Ajouter un mentor
+
         </h1>
         <button
           type="button"
@@ -359,26 +362,26 @@
               <span class="fs-5 fw-bold" style="color: var(--color-primary)"
                 >Nom complet</span
               >
-              <p class="fs-5">{{ currentMentorElt.mentor[0].nom }}</p>
+              <p class="fs-5">{{ currentMentorElt.mentor.nom }}</p>
             </div>
             <div class="modalContentBottomItem">
               <span class="fs-5 fw-bold" style="color: var(--color-primary)"
                 >Email</span
               >
-              <p class="fs-5">{{ currentMentorElt.mentor[0].email }}</p>
+              <p class="fs-5">{{ currentMentorElt.mentor.email }}</p>
             </div>
             <div class="modalContentBottomItem">
               <span class="fs-5 fw-bold" style="color: var(--color-primary)"
                 >Specialité</span
               >
-              <p class="fs-5">{{ currentMentorElt.mentor[0].articles_id | articlesIdToArticleName: articles }}</p>
 
+              <p class="fs-5">{{ currentMentorElt.mentor.articles_id | articlesIdToArticleName:articles }}</p>
             </div>
             <div class="modalContentBottomItem">
               <span class="fs-5 fw-bold" style="color: var(--color-primary)"
                 >Année d'expérience</span
               >
-              <p class="fs-5">{{ currentMentorElt.mentor[0].nombre_annee_experience }}</p>
+             <p class="fs-5"> {{ currentMentorElt.mentor.nombre_annee_experience }}</p>
             </div>
           </div>
         </div>
@@ -402,7 +405,7 @@
   class="modal fade modal-lg"
   id="modifierMentor"
   tabindex="-1"
-  aria-labelledby="modifierMentorLabel"
+  aria-labelledby="modifierMentor"
   aria-hidden="true"
 >
   <div class="modal-dialog">
@@ -426,7 +429,13 @@
           <div class="row">
             <div class="mb-3 col-6">
               <label for="nom" class="form-label">Nom</label>
-              <input type="text" class="form-control" id="nom" name="nom" />
+              <input
+                type="text"
+                class="form-control"
+                id="nom"
+                name="nom"
+                [(ngModel)]="nomMentorUpdate"
+              />
             </div>
             <div class="mb-3 col-6">
               <label for="prenom" class="form-label">Prenom</label>
@@ -435,6 +444,7 @@
                 class="form-control"
                 id="prenom"
                 name="prenom"
+                [(ngModel)]="prenomMentorUpdate"
               />
             </div>
           </div>
@@ -446,11 +456,18 @@
                 class="form-control"
                 id="email"
                 name="email"
+                [(ngModel)]="emailMentorUpdate"
               />
             </div>
             <div class="mb-3 col-6">
-              <label for="formFile" class="form-label">Image</label>
-              <input class="form-control" type="file" id="formFile" />
+              <label for="photo_profil_MentorUpdate" class="form-label">Image</label>
+              <input
+                class="form-control"
+                type="text"
+                id="photo_profil_MentorUpdate"
+                name="photo_profil_MentorUpdate"
+                [(ngModel)]="photo_profil_MentorUpdate"
+              />
             </div>
           </div>
           <div class="row">
@@ -460,6 +477,7 @@
                 class="form-select"
                 name="specialite"
                 aria-label="Default select example"
+                [(ngModel)]="article_idMentorUpdate"
               >
                 <option selected>Selectionner son specialté</option>
                 <option value="1">One</option>
@@ -476,14 +494,33 @@
                 class="form-control"
                 id="anneeExperience"
                 name="anneeExperience"
+                [(ngModel)]="nombre_annee_experienceMentorUpdate"
               />
             </div>
-            <div class="row">
-              <textarea
+          </div>
+          <div class="row">
+            <div class="mb-3 col-6">
+              <label for="telphoneMentorUpdate" class="form-label"
+                >Telephone</label
+              >
+              <input
+                type="tel"
                 class="form-control"
-                placeholder="Description"
-                style="height: 100px"
-              ></textarea>
+                id="telphoneMentorUpdate"
+                name="telphoneMentorUpdate" [(ngModel)]="telephoneMentorUpdate"
+              />
+            </div>
+            <div class="mb-3 col-6">
+              <label for="passwordMentorUpdate" class="form-label"
+                >Mot de passe</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="passwordMentorUpdate"
+                name="passwordMentorUpdate"
+                [(ngModel)]="passwordMentorUpdate"
+              />
             </div>
           </div>
         </form>
@@ -492,9 +529,11 @@
         <button
           type="button"
           class="btn text-white w-25"
+          data-bs-dismiss="modal"
           style="background-color: var(--color-primary)"
+          (click)="updateMentor(1)"
         >
-          Modifier
+          Ajouter
         </button>
         <button
           type="button"
@@ -512,3 +551,4 @@
     </div>
   </div>
 </div>
+

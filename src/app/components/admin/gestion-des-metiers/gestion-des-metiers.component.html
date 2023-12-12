@@ -103,7 +103,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let article of AllArticle">
             <th class="text-center">
               <img
                 src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -111,14 +111,15 @@
                 style="height: 40px; width: 40px; border-radius: 50%"
               />
             </th>
-            <td class="text-center">Devellopement web</td>
-            <td class="text-center">Devellopeur front-end</td>
+            <td class="text-center">{{ article.libelle }}</td>
+            <td class="text-center">{{ article.debouche }}</td>
             <td class="text-center">
               <button
                 class="btn me-2 text-white"
                 style="background-color: var(--color-primary)"
                 data-bs-toggle="modal"
                 data-bs-target="#detailMentor"
+                (click)="getMetierById(article.id)"
               >
                 <i class="bx bxs-show"></i>
               </button>
@@ -127,187 +128,14 @@
                 style="background-color: var(--color-primary)"
                 data-bs-toggle="modal"
                 data-bs-target="#modifierMetier"
+                (click)="getMetierById(article.id)"
               >
                 <i class="bx bxs-edit"></i>
               </button>
               <button
                 class="btn text-white"
                 style="background-color: var(--color-primary)"
-              >
-                <i class="bx bxs-archive-in"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th class="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                style="height: 40px; width: 40px; border-radius: 50%"
-              />
-            </th>
-            <td class="text-center">Devellopement web</td>
-            <td class="text-center">Devellopeur front-end</td>
-            <td class="text-center">
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#detailMentor"
-              >
-                <i class="bx bxs-show"></i>
-              </button>
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#modifierMetier"
-              >
-                <i class="bx bxs-edit"></i>
-              </button>
-              <button
-                class="btn text-white"
-                style="background-color: var(--color-primary)"
-              >
-                <i class="bx bxs-archive-in"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th class="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                style="height: 40px; width: 40px; border-radius: 50%"
-              />
-            </th>
-            <td class="text-center">Devellopement web</td>
-            <td class="text-center">Devellopeur front-end</td>
-            <td class="text-center">
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#detailMentor"
-              >
-                <i class="bx bxs-show"></i>
-              </button>
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#modifierMetier"
-              >
-                <i class="bx bxs-edit"></i>
-              </button>
-              <button
-                class="btn text-white"
-                style="background-color: var(--color-primary)"
-              >
-                <i class="bx bxs-archive-in"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th class="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                style="height: 40px; width: 40px; border-radius: 50%"
-              />
-            </th>
-            <td class="text-center">Devellopement web</td>
-            <td class="text-center">Devellopeur front-end</td>
-            <td class="text-center">
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#detailMentor"
-              >
-                <i class="bx bxs-show"></i>
-              </button>
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#modifierMetier"
-              >
-                <i class="bx bxs-edit"></i>
-              </button>
-              <button
-                class="btn text-white"
-                style="background-color: var(--color-primary)"
-              >
-                <i class="bx bxs-archive-in"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th class="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                style="height: 40px; width: 40px; border-radius: 50%"
-              />
-            </th>
-            <td class="text-center">Devellopement web</td>
-            <td class="text-center">Devellopeur front-end</td>
-            <td class="text-center">
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#detailMentor"
-              >
-                <i class="bx bxs-show"></i>
-              </button>
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#modifierMetier"
-              >
-                <i class="bx bxs-edit"></i>
-              </button>
-              <button
-                class="btn text-white"
-                style="background-color: var(--color-primary)"
-              >
-                <i class="bx bxs-archive-in"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th class="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                style="height: 40px; width: 40px; border-radius: 50%"
-              />
-            </th>
-            <td class="text-center">Devellopement web</td>
-            <td class="text-center">Devellopeur front-end</td>
-            <td class="text-center">
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#detailMentor"
-              >
-                <i class="bx bxs-show"></i>
-              </button>
-              <button
-                class="btn me-2 text-white"
-                style="background-color: var(--color-primary)"
-                data-bs-toggle="modal"
-                data-bs-target="#modifierMetier"
-              >
-                <i class="bx bxs-edit"></i>
-              </button>
-              <button
-                class="btn text-white"
-                style="background-color: var(--color-primary)"
+                (click)="archiveMetierById(article.id)"
               >
                 <i class="bx bxs-archive-in"></i>
               </button>
@@ -372,25 +200,37 @@
           <div class="formContainer">
             <div class="formContainerLeft">
               <div class="mb-3 col-12">
-                <label for="titre" class="form-label">Titre</label>
+                <label for="libelleAdd" class="form-label">Titre</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="titre"
-                  name="titre"
+                  id="libelleAdd"
+                  name="libelleAdd"
+                  [(ngModel)]="libelleAdd"
                 />
               </div>
               <div class="mb-3">
-                <label for="formFile" class="form-label">Image</label>
-                <input class="form-control" type="file" id="formFile" />
+                <label for="imageAdd" class="form-label">Image</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="imageAdd"
+                  [(ngModel)]="imageAdd"
+                  name="imageAdd"
+                />
               </div>
+              {{ libelleAdd }}
+              {{ deboucheAdd }}
+              {{ imageAdd }}
+              {{ descriptionAdd }}
               <div class="mb-3">
                 <label for="debouche" class="form-label">Debouché</label>
                 <textarea
                   class="form-control"
                   placeholder="Description"
-                  name="debouche"
+                  name="deboucheAdd"
                   style="height: 50px"
+                  [(ngModel)]="deboucheAdd"
                 ></textarea>
               </div>
             </div>
@@ -399,9 +239,22 @@
               <textarea
                 class="form-control"
                 placeholder="Description"
-                name="description"
+                name="descriptionAdd"
                 style="height: 100px"
+                [(ngModel)]="descriptionAdd"
               ></textarea>
+
+              <label for="dateDePublication" class="form-label"
+                >Date de Publication</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                placeholder="dateDePublication"
+                name="dateDePublicationAdd"
+                style="height: 100px"
+                [(ngModel)]="datePublicationAdd"
+              />
             </div>
           </div>
         </form>
@@ -411,6 +264,7 @@
           type="button"
           class="btn text-white w-25"
           style="background-color: var(--color-primary)"
+          (click)="addArticle()"
         >
           Ajouter
         </button>
@@ -471,28 +325,20 @@
               <span class="fs-5 fw-bold" style="color: var(--color-primary)"
                 >Titre</span
               >
-              <p>Le percepteur</p>
+              <p class="fs-5">{{ currentArticle.libelle }}</p>
             </div>
             <div class="modalContentBottomItem">
-              <span class="fs-5 fw-bold" style="color: var(--color-primary)"
+              <span class="fs-5 fw-bold mb-4" style="color: var(--color-primary)"
                 >Débouché</span
               >
-              <p>Le percepteur</p>
+              <p class="fs-5">{{ currentArticle.debouche }}</p>
             </div>
             <div class="modalContentBottomItem description h-75">
               <span class="fs-5 fw-bold" style="color: var(--color-primary)"
                 >Description</span
               >
-              <p class="h-100 overflow-scroll">
-                Le percepteur des contributions, l’homme des impositions
-                indirectes, l’officier de gendarmerie et deux ou trois autres
-                fonctionnaires publics arrivèrent avec leurs femmes. Ils furent
-                suivis de quelques libéraux riches. On annonça le dîner. Julien,
-                fonctionnaires publics arrivèrent avec leurs femmes. Ils furent
-                suivis de quelques libéraux riches. On annonça le dîner. Julien,
-                fonctionnaires publics arrivèrent avec leurs femmes. Ils furent
-                suivis de quelques libéraux riches. On annonça le dîner. Julien,
-                e mauvais goût dont on voulait l’étourdir.
+              <p class="h-100 overflow-scroll mt-3">
+                {{currentArticle.description }}
               </p>
             </div>
           </div>
@@ -541,25 +387,33 @@
           <div class="formContainer">
             <div class="formContainerLeft">
               <div class="mb-3 col-12">
-                <label for="titre" class="form-label">Titre</label>
+                <label for="libelleAdd" class="form-label">Titre</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="titre"
-                  name="titre"
+                  id="libelleAdd"
+                  name="libelleAdd"
+                  [(ngModel)]="titreUpdate"
                 />
               </div>
               <div class="mb-3">
-                <label for="formFile" class="form-label">Image</label>
-                <input class="form-control" type="file" id="formFile" />
+                <label for="imageAdd" class="form-label">Image</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="imageAdd"
+                  [(ngModel)]="imageUpdate"
+                  name="imageAdd"
+                />
               </div>
               <div class="mb-3">
                 <label for="debouche" class="form-label">Debouché</label>
                 <textarea
                   class="form-control"
                   placeholder="Description"
-                  name="debouche"
+                  name="deboucheAdd"
                   style="height: 50px"
+                  [(ngModel)]="deboucheUpdate"
                 ></textarea>
               </div>
             </div>
@@ -568,9 +422,22 @@
               <textarea
                 class="form-control"
                 placeholder="Description"
-                name="description"
+                name="descriptionAdd"
                 style="height: 100px"
+                [(ngModel)]="descriptionUpdate"
               ></textarea>
+
+              <label for="dateDePublication" class="form-label"
+                >Date de Publication</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                placeholder="dateDePublication"
+                name="dateDePublicationAdd"
+                style="height: 100px"
+                [(ngModel)]="datePublicationUpdate"
+              />
             </div>
           </div>
         </form>
@@ -580,6 +447,8 @@
           type="button"
           class="btn text-white w-25"
           style="background-color: var(--color-primary)"
+          data-bs-dismiss="modal"
+          (click)="updateMetier(currentArticle.id)"
         >
           Modifier
         </button>

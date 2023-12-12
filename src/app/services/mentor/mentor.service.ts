@@ -30,7 +30,11 @@ export class MentorService {
     return this.http.get<Mentor>(`${this.apiUrl}/mentor/show/${id}`);
   }
 
-  updateMentor(mentor: Mentor): Observable<Mentor> {
-    return this.http.put<Mentor>(`${this.apiUrl}/mentor/edit/${mentor.id}`, mentor)
+  updateMentor(mentor: Mentor, id: number): Observable<Mentor> {
+    return this.http.put<Mentor>(`${this.apiUrl}/mentor/edit/${id}`, mentor)
+  }
+
+  archiveMentor(id: number, mentor: Mentor):Observable<Mentor>{
+    return this.http.put<Mentor>(`${this.apiUrl}/mentor/archive/${id}`, mentor)
   }
 }
