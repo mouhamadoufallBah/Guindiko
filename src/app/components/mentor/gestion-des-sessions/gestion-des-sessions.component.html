@@ -26,7 +26,7 @@
     <div class="mainContentBottom ps-3 pe-3">
       <div class="d-flex align-items-center justify-content-between">
         <div class="buttonAjouter mt-2 mb-3">
-          <!-- Button modal Ajouter-->
+          <!-- Button modal Ajouter au nivezu du tableu liste session-->
           <button
             type="button"
             class="btn text-white"
@@ -34,7 +34,7 @@
             data-bs-target="#ajouteMentor"
             style="background-color: var(--color-primary)"
           >
-            Ajouter
+            Ajouter session 
           </button>
         </div>
         <div class="champsRecherche mt-2 mb-3 w-50">
@@ -100,7 +100,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr  *ngFor="let session of sessions">
               <th class="text-center">
                 <img
                   src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -108,8 +108,8 @@
                   style="height: 40px; width: 40px; border-radius: 50%"
                 />
               </th>
-              <td class="text-center">Yoff</td>
-              <td class="text-center">Les function en javascript</td>
+              <td class="text-center">{{session.lieu}}</td>
+              <td class="text-center">{{session.theme}}</td>
               <td class="text-center">Ibou Fall</td>
               <td class="text-center">
                 <button
@@ -131,130 +131,7 @@
                
               </td>
             </tr>
-            <tr>
-              <th class="text-center">
-                <img
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                  style="height: 40px; width: 40px; border-radius: 50%"
-                />
-              </th>
-              <td class="text-center">VDN</td>
-              <td class="text-center">L'API Loopback</td>
-              <td class="text-center">Habib Bah</td>
-              <td class="text-center">
-                <button
-                  class="btn me-2 text-white"
-                  style="background-color: var(--color-primary)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#detailMentor"
-                >
-                  <i class="bx bxs-show"></i>
-                </button>
-                <button
-                  class="btn me-2 text-white"
-                  style="background-color: var(--color-primary)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modifierMentor"
-                >
-                  <i class="bx bxs-edit"></i>
-                </button>
-              
-              </td>
-            </tr>
-            <tr>
-              <th class="text-center">
-                <img
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                  style="height: 40px; width: 40px; border-radius: 50%"
-                />
-              </th>
-              <td class="text-center">Mermoz</td>
-              <td class="text-center">React js</td>
-              <td class="text-center">Mouhamed Fall Bah</td>
-              <td class="text-center">
-                <button
-                  class="btn me-2 text-white"
-                  style="background-color: var(--color-primary)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#detailMentor"
-                >
-                  <i class="bx bxs-show"></i>
-                </button>
-                <button
-                  class="btn me-2 text-white"
-                  style="background-color: var(--color-primary)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modifierMentor"
-                >
-                  <i class="bx bxs-edit"></i>
-                </button>
-               
-              </td>
-            </tr>
-            <tr>
-              <th class="text-center">
-                <img
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                  style="height: 40px; width: 40px; border-radius: 50%"
-                />
-              </th>
-              <td class="text-center">Fann</td>
-              <td class="text-center">Angular Js</td>
-              <td class="text-center">Assane Diop</td>
-              <td class="text-center">
-                <button
-                  class="btn me-2 text-white"
-                  style="background-color: var(--color-primary)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#detailMentor"
-                >
-                  <i class="bx bxs-show"></i>
-                </button>
-                <button
-                  class="btn me-2 text-white"
-                  style="background-color: var(--color-primary)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modifierMentor"
-                >
-                  <i class="bx bxs-edit"></i>
-                </button>
-               
-              </td>
-            </tr>
-            <tr>
-              <th class="text-center">
-                <img
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                  style="height: 40px; width: 40px; border-radius: 50%"
-                />
-              </th>
-              <td class="text-center">Almadies</td>
-              <td class="text-center">Node Js</td>
-              <td class="text-center">Sibo Balde</td>
-              <td class="text-center">
-                <button
-                  class="btn me-2 text-white"
-                  style="background-color: var(--color-primary)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#detailMentor"
-                >
-                  <i class="bx bxs-show"></i>
-                </button>
-                <button
-                  class="btn me-2 text-white"
-                  style="background-color: var(--color-primary)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modifierMentor"
-                >
-                  <i class="bx bxs-edit"></i>
-                </button>
-                
-              </td>
-            </tr>
+            
            
           </tbody>
         </table>
@@ -314,29 +191,29 @@
           <form class="">
             <div class="row">
               <div class="mb-3 col-6">
-                <label for="nom" class="form-label">Theme</label>
-                <input type="text" class="form-control" id="nom" name="nom" />
+                <label for="theme" class="form-label">Theme</label>
+                <input type="text" class="form-control" id="theme" name="theme" ngModule="theme"/>
               </div>
               <div class="mb-3 col-6">
-                <label for="prenom" class="form-label">Date</label>
+                <label for="date" class="form-label">Date</label>
                 <input
                   type="date"
                   class="form-control"
-                  id="prenom"
-                  name="prenom"
+                  id="date"
+                  name="date"
                 />
               </div>
             </div>
             <div class="row">
                 <div class="mb-3 col-6">
-                    <label for="formFile" class="form-label">Lieu</label>
-                    <input class="form-control" type="text" id="formFile" />
+                    <label for="lieu" class="form-label">Lieu</label>
+                    <input class="form-control" type="text" id="lieu"  ngModule="lieu"/>
                   </div>
                   <div class="mb-3 col-6">
-                    <label for="specialite" class="form-label">Mentoré</label>
+                    <label for="mentore" class="form-label">Mentoré</label>
                     <select
                       class="form-select"
-                      name="specialite"
+                      name="mentore"
                       aria-label="Default select example"
                     >
                       <option selected>Selectionner sun mentoré</option>
@@ -353,11 +230,12 @@
             
           </form>
         </div>
+        <!-- remplire popup ajout -->
         <div class="modal-footer d-flex justify-content-center">
           <button
             type="button"
             class="btn text-white w-25"
-            style="background-color: var(--color-primary)"
+            style="background-color: var(--color-primary)" (click)="ajouterSession()" 
           >
             Ajouter
           </button>
