@@ -33,7 +33,6 @@ import { MentoresService } from './services/mentores/mentores.service';
 import { MessageService } from './services/message/message.service';
 import { SessionService } from './services/session/session.service';
 import { PageErrorComponent } from './components/layouts/page-error/page-error.component';
-import {  HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -69,14 +68,15 @@ import {  HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  
+
   providers: [
     MetierService,
     EvenementService,
     MentorService,
     MentoresService,
     MessageService,
-    SessionService
+    SessionService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
